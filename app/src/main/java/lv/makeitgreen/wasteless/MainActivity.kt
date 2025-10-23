@@ -23,8 +23,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.PreviewScreenSizes
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import lv.makeitgreen.wasteless.navigation.NavigationMain
 import lv.makeitgreen.wasteless.ui.theme.WastelessTheme
-
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,65 +34,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             WastelessTheme {
-                WastelessApp()
+                val navController = rememberNavController()
+                NavigationMain(navController)
             }
         }
     }
 }
-
-@PreviewScreenSizes
-@Composable
-fun WastelessApp() {
-    var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.HOME) }
-
-    NavigationSuiteScaffold(
-        navigationSuiteItems = {
-            AppDestinations.entries.forEach {
-                item(
-                    icon = {
-                        Icon(
-                            it.icon,
-                            contentDescription = it.label
-                        )
-                    },
-                    label = { Text(it.label) },
-                    selected = it == currentDestination,
-                    onClick = { currentDestination = it }
-                )
-            }
-        }
-    ) {
-        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-            HelloWorld(
-                modifier = Modifier.padding(innerPadding)
-            )
-        }
-    }
-}
-
-enum class AppDestinations(
-    val label: String,
-    val icon: ImageVector,
-) {
-    HOME("Home", Icons.Rounded.Home),
-    MAP("Map", Icons.Rounded.Place),
-    SEARCH("Search", Icons.Rounded.Search),
-    SCANNER("Scan", Icons.Rounded.Search),
-    SETTINGS("Settings", Icons.Rounded.Settings),
-}
-
-@Composable
-fun HelloWorld(modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello World!",
-        modifier = modifier
-    )
-}
-
-// @Preview(showBackground = true)
-// @Composable
-// fun HelloWorldPreview() {
-//     WastelessTheme {
-//         HelloWorld()
-//     }
-// }
