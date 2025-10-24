@@ -16,31 +16,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import lv.makeitgreen.wasteless.AppDestinations
+import lv.makeitgreen.wasteless.ui.components.NavBar
 
 @Composable
 fun HomeScreen(navController: NavController) {
     var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.HOME) }
 
-    NavigationSuiteScaffold(
-        navigationSuiteItems = {
-            AppDestinations.entries.forEach {
-                item(
-                    icon = {
-                        Icon(
-                            it.icon,
-                            contentDescription = it.label
-                        )
-                    },
-                    label = { Text(it.label) },
-                    selected = it == currentDestination,
-                    onClick = {
-                        currentDestination = it
-                        navController.navigate(currentDestination.route)
-                    }
-                )
-            }
-        }
-    ) {
+    NavBar(currentDestination, navController) {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
             HelloWorld(
                 modifier = Modifier.padding(innerPadding)

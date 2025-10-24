@@ -35,35 +35,16 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import lv.makeitgreen.wasteless.AppDestinations
+import lv.makeitgreen.wasteless.ui.components.NavBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SearchScreen(navController: NavController) {
-    var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.HOME) }
+    var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.SEARCH) }
     var searchText by remember { mutableStateOf("") }
     var isSearchActive by remember { mutableStateOf(false) }
 
-
-    NavigationSuiteScaffold(
-        navigationSuiteItems = {
-            AppDestinations.entries.forEach {
-                item(
-                    icon = {
-                        Icon(
-                            it.icon,
-                            contentDescription = it.label
-                        )
-                    },
-                    label = { Text(it.label) },
-                    selected = it == currentDestination,
-                    onClick = {
-                        currentDestination = it
-                        navController.navigate(currentDestination.route)
-                    }
-                )
-            }
-        }
-    ) {
+    NavBar(currentDestination, navController) {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
             Box(
                 Modifier.fillMaxSize(),
