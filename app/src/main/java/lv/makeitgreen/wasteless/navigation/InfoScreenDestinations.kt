@@ -7,15 +7,12 @@ import androidx.compose.material.icons.rounded.Search
 import androidx.compose.ui.graphics.vector.ImageVector
 import lv.makeitgreen.wasteless.ui.icons.MyIcons
 
-// Part of Navigation Bar
-enum class AppDestinations(
+// Not part of Navigation Bar
+enum class InfoScreenDestinations (
     val label: String,
-    val icon: ImageVector,
     val route: String,
 ) {
-    HOME("Home", Icons.Rounded.Home, "home_screen"),
-    MAP("Map", Icons.Rounded.Place, "map_screen"),
-    SEARCH("Search", Icons.Rounded.Search, "search_screen"),
-    SCAN("Scanner", MyIcons.OutlineBarcodeScanner24, "scan_screen"),
-    // SETTINGS("Settings", , "settings_screen"),
+    RECYCLING_SYMBOLS("Recycling Symbol Screen", "recycling_symbol_screen"),
+    WASTE_COMPANIES("Waste Management Companies", "waste_company_screen"),
+    WASTE_TYPES("Waste Types", "waste_types_screen"),
 }

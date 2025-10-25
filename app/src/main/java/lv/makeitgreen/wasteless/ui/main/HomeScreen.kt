@@ -34,11 +34,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import lv.makeitgreen.wasteless.navigation.AppDestinations
+import lv.makeitgreen.wasteless.navigation.InfoScreenDestinations
 import lv.makeitgreen.wasteless.ui.components.NavBar
 import lv.makeitgreen.wasteless.ui.icons.MyIcons
 
@@ -52,7 +55,7 @@ fun HomeScreen(navController: NavController) {
             HomeSearchBar(
                 searchBarModifier = Modifier.fillMaxWidth(0.95F)
             )
-            HomeInfoButtons()
+            HomeInfoButtons(navController = navController)
         }
     }
 }
@@ -109,7 +112,8 @@ fun HomeSearchBar(searchBarModifier: Modifier) {
 
 @Composable
 fun HomeInfoButtons(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    navController: NavController
 ) {
     Column(
         modifier = modifier
@@ -121,21 +125,27 @@ fun HomeInfoButtons(
     ) {
         val buttonHeight = 200.dp
         InfoButton(
-            onClick = {},
+            onClick = {
+                navController.navigate(InfoScreenDestinations.RECYCLING_SYMBOLS.route)
+            },
             buttonHeight = buttonHeight,
             text = "Simboli",
             largeSymbol = MyIcons.OutlineRecycling24,
             iconSize = buttonHeight-64.dp
         )
         InfoButton(
-            onClick = {},
+            onClick = {
+                navController.navigate(InfoScreenDestinations.WASTE_TYPES.route)
+            },
             buttonHeight = buttonHeight,
             text = "Atkritumu veidi",
             largeSymbol = MyIcons.OutlineDelete24,
             iconSize = buttonHeight-64.dp
         )
         InfoButton(
-            onClick = {},
+            onClick = {
+                navController.navigate(InfoScreenDestinations.WASTE_COMPANIES.route)
+            },
             buttonHeight = buttonHeight,
             text = "Atkritumu apsaimniekotāji",
             largeSymbol = MyIcons.OutlineFactory24,

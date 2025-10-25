@@ -9,6 +9,9 @@ import lv.makeitgreen.wasteless.ui.main.HomeScreen
 import lv.makeitgreen.wasteless.ui.main.MapScreen
 import lv.makeitgreen.wasteless.ui.main.ScanScreen
 import lv.makeitgreen.wasteless.ui.main.SearchScreen
+import lv.makeitgreen.wasteless.ui.main.infoScreens.RecyclingSymbolScreen
+import lv.makeitgreen.wasteless.ui.main.infoScreens.WasteCompanyScreen
+import lv.makeitgreen.wasteless.ui.main.infoScreens.WasteTypesScreen
 
 @Composable
 fun NavigationMain(navController: NavController) {
@@ -25,6 +28,15 @@ fun NavigationMain(navController: NavController) {
         }
         composable(route = Screen.ScanScreen.route) {
             ScanScreen(navController)
+        }
+        composable(route = Screen.RecyclingSymbolScreen.route) {
+            RecyclingSymbolScreen(navController)
+        }
+        composable(route = Screen.WasteCompanyScreen.route) {
+            WasteCompanyScreen(navController)
+        }
+        composable(route = Screen.WasteTypesScreen.route) {
+            WasteTypesScreen(navController)
         }
     }
 }

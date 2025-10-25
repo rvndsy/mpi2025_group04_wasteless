@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.navigation.NavController
 import lv.makeitgreen.wasteless.R
 import lv.makeitgreen.wasteless.navigation.AppDestinations
