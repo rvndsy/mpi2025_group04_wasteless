@@ -1,5 +1,6 @@
 package lv.makeitgreen.wasteless.ui.main
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -9,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -31,11 +33,14 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import lv.makeitgreen.wasteless.navigation.AppDestinations
 import lv.makeitgreen.wasteless.ui.components.NavBar
+import lv.makeitgreen.wasteless.ui.icons.MyIcons
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -109,7 +114,7 @@ fun HomeInfoButtons(
     Column(
         modifier = modifier
             .fillMaxSize()
-            .padding(top = 96.dp)
+            .padding(top = 114.dp)
             .verticalScroll(rememberScrollState()),
         // verticalArrangement = Arrangement.spacedBy(16.dp), //currently done by top padding within InfoButton
         horizontalAlignment = Alignment.CenterHorizontally
@@ -118,23 +123,29 @@ fun HomeInfoButtons(
         InfoButton(
             onClick = {},
             buttonHeight = buttonHeight,
-            text = "Simboli"
+            text = "Simboli",
+            largeSymbol = MyIcons.OutlineRecycling24,
+            iconSize = buttonHeight-64.dp
         )
         InfoButton(
             onClick = {},
             buttonHeight = buttonHeight,
-            text = "Atkritumu veidi"
+            text = "Atkritumu veidi",
+            largeSymbol = MyIcons.OutlineDelete24,
+            iconSize = buttonHeight-64.dp
         )
         InfoButton(
             onClick = {},
             buttonHeight = buttonHeight,
-            text = "Atkritumu apsaimniekotāji"
+            text = "Atkritumu apsaimniekotāji",
+            largeSymbol = MyIcons.OutlineFactory24,
+            iconSize = buttonHeight-64.dp
         )
-        InfoButton(
-            onClick = {},
-            buttonHeight = buttonHeight,
-            text = "(For scrolling)"
-        )
+//        InfoButton(
+//            onClick = {},
+//            buttonHeight = buttonHeight,
+//            text = "(For scrolling)"
+//        )
     }
 }
 
@@ -143,7 +154,9 @@ fun InfoButton(
     onClick: () -> Unit,
     text: String,
     buttonHeight: Dp,
-) {
+    largeSymbol: ImageVector,
+    iconSize: Dp,
+    ) {
     Button(
         onClick = onClick,
         modifier = Modifier
@@ -152,6 +165,18 @@ fun InfoButton(
             .padding(top = 16.dp),
         shape = RoundedCornerShape(16.dp)
     ) {
-        Text(text)
+        Column (
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxHeight()
+        ) {
+            Icon(
+                modifier = Modifier.size(iconSize),
+                imageVector = largeSymbol,
+                contentDescription = text)
+            Text(
+                fontSize = 24.sp,
+                text = text
+            )
+        }
     }
 }
