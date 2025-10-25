@@ -4,7 +4,11 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.res.vectorResource
 import androidx.navigation.NavController
+import lv.makeitgreen.wasteless.R
 import lv.makeitgreen.wasteless.navigation.AppDestinations
 
 @Composable

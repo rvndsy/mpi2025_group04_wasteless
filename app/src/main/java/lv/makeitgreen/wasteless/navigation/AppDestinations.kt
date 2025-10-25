@@ -5,6 +5,7 @@ import androidx.compose.material.icons.rounded.Home
 import androidx.compose.material.icons.rounded.Place
 import androidx.compose.material.icons.rounded.Search
 import androidx.compose.ui.graphics.vector.ImageVector
+import lv.makeitgreen.wasteless.ui.icons.MyIcons
 
 enum class AppDestinations(
     val label: String,
@@ -14,6 +15,6 @@ enum class AppDestinations(
     HOME("Home", Icons.Rounded.Home, "home_screen"),
     MAP("Map", Icons.Rounded.Place, "map_screen"),
     SEARCH("Search", Icons.Rounded.Search, "search_screen"),
-    SCAN("Scanner", Icons.Rounded.Search, "scan_screen"),
-    // SETTINGS("Settings", Icons.Rounded.Settings, "settings_screen"),
+    SCAN("Scanner", MyIcons.OutlineBarcodeScanner24, "scan_screen"),
+    // SETTINGS("Settings", , "settings_screen"),
 }
