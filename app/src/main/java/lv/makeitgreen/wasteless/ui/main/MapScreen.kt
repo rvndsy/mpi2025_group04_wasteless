@@ -45,6 +45,7 @@ fun MapScreen(navController: NavController) {
     var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.MAP) }
     val fusedLocationClient = remember { LocationServices.getFusedLocationProviderClient(context) }
 
+    // Ask for *precise* location permissions
     val locationPermissions = rememberPermissionState(Manifest.permission.ACCESS_FINE_LOCATION)
     LaunchedEffect(Unit) {
         locationPermissions.launchPermissionRequest()
@@ -53,6 +54,7 @@ fun MapScreen(navController: NavController) {
     var latitude by remember { mutableStateOf(57.538) }
     var longitude by remember { mutableStateOf(25.422) }
 
+    // Try to get current (last known) location of the device
     fusedLocationClient.lastLocation
         .addOnSuccessListener { location : Location? ->
             if (location != null) {
@@ -61,6 +63,7 @@ fun MapScreen(navController: NavController) {
             }
         }
 
+    // Create the OSM MapView itself
     val mapView = remember {
         MapView(context).apply {
             setTileSource(TileSourceFactory.MAPNIK)
@@ -70,15 +73,15 @@ fun MapScreen(navController: NavController) {
         }
     }
 
-    val locationOverlay = remember {
-        MyLocationNewOverlay(GpsMyLocationProvider(context), mapView).apply {
-            enableMyLocation()
-            enableFollowLocation()
+    // Create Overlay - the device current location displayed
+    if (locationPermissions.status.isGranted) {
+        val overlay = remember { MyLocationNewOverlay(GpsMyLocationProvider(context), mapView) }
+        overlay.enableMyLocation()
+        overlay.enableFollowLocation()
+        DisposableEffect(Unit) {
+            mapView.overlays.add(overlay)
+            onDispose { mapView.overlays.remove(overlay) }
         }
-    }
-    DisposableEffect(Unit) {
-        mapView.overlays.add(locationOverlay)
-        onDispose { mapView.overlays.remove(locationOverlay) }
     }
 
     NavBar(currentDestination, navController) {
