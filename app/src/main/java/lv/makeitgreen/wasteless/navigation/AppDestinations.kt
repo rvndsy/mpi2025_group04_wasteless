@@ -13,9 +13,10 @@ enum class AppDestinations(
     val icon: ImageVector,
     val route: String,
 ) {
+    // Order top to bottom here is the same as left to right in the NavBar
     HOME("Home", Icons.Rounded.Home, "home_screen"),
     MAP("Map", Icons.Rounded.Place, "map_screen"),
-    SEARCH("Search", Icons.Rounded.Search, "search_screen"),
     SCAN("Scanner", MyIcons.OutlineBarcodeScanner24, "scan_screen"),
+    SEARCH("Search", Icons.Rounded.Search, "search_screen"),
     // SETTINGS("Settings", , "settings_screen"),
 }

@@ -61,7 +61,17 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
+    // For OSM MapView
     //noinspection NewerVersionAvailable
     implementation("com.google.accompanist:accompanist-permissions:0.37.3")
     implementation("org.osmdroid:osmdroid-android:6.1.20")
+
+    // For Barcode scanner
+    implementation("com.google.mlkit:barcode-scanning:17.3.0")
+    implementation("androidx.camera:camera-core:1.5.1")
+    implementation("androidx.camera:camera-camera2:1.5.1")
+    implementation("androidx.camera:camera-lifecycle:1.5.1")
+    implementation("androidx.camera:camera-view:1.5.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.4")
+//    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
 }
