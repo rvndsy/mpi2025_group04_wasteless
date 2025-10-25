@@ -2,7 +2,6 @@ package lv.makeitgreen.wasteless.ui.main
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -16,12 +15,12 @@ import lv.makeitgreen.wasteless.AppDestinations
 import lv.makeitgreen.wasteless.ui.components.NavBar
 
 @Composable
-fun HomeScreen(navController: NavController) {
-    var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.HOME) }
+fun MapScreen(navController: NavController) {
+    var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.MAP) }
 
     NavBar(currentDestination, navController) {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-            HelloWorld(
+            HelloMap(
                 modifier = Modifier.padding(innerPadding)
             )
         }
@@ -29,9 +28,9 @@ fun HomeScreen(navController: NavController) {
 }
 
 @Composable
-fun HelloWorld(modifier: Modifier = Modifier) {
+fun HelloMap(modifier: Modifier = Modifier) {
     Text(
-        text = "Hello World!",
+        text = "Hello, this is a map!",
         modifier = modifier
     )
 }

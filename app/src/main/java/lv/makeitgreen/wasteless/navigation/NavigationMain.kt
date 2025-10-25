@@ -6,6 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import lv.makeitgreen.wasteless.ui.main.HomeScreen
+import lv.makeitgreen.wasteless.ui.main.MapScreen
+import lv.makeitgreen.wasteless.ui.main.ScanScreen
 import lv.makeitgreen.wasteless.ui.main.SearchScreen
 
 @Composable
@@ -17,6 +19,12 @@ fun NavigationMain(navController: NavController) {
         }
         composable(route = Screen.SearchScreen.route) {
             SearchScreen(navController)
+        }
+        composable(route = Screen.MapScreen.route) {
+            MapScreen(navController)
+        }
+        composable(route = Screen.ScanScreen.route) {
+            ScanScreen(navController)
         }
     }
 }

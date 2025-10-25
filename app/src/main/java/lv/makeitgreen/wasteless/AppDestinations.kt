@@ -15,6 +15,6 @@ enum class AppDestinations(
     HOME("Home", Icons.Rounded.Home, "home_screen"),
     MAP("Map", Icons.Rounded.Place, "map_screen"),
     SEARCH("Search", Icons.Rounded.Search, "search_screen"),
-    SCANNER("Scan", Icons.Rounded.Search, "scanner_screen"),
+    SCAN("Scanner", Icons.Rounded.Search, "scan_screen"),
     // SETTINGS("Settings", Icons.Rounded.Settings, "settings_screen"),
 }

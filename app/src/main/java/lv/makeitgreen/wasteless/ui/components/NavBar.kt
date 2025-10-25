@@ -32,6 +32,6 @@ fun NavBar(
             }
         }
     ) {
-        content
+        content()
     }
 }
