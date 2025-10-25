@@ -51,7 +51,7 @@ fun HomeScreen(navController: NavController) {
     var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.HOME) }
 
     NavBar(currentDestination, navController) {
-        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+        Scaffold(modifier = Modifier.fillMaxSize()) {
             HomeSearchBar(
                 searchBarModifier = Modifier.fillMaxWidth(0.95F)
             )
@@ -129,7 +129,7 @@ fun HomeInfoButtons(
                 navController.navigate(InfoScreenDestinations.RECYCLING_SYMBOLS.route)
             },
             buttonHeight = buttonHeight,
-            text = "Simboli",
+            text = "Waste material symbols",
             largeSymbol = MyIcons.OutlineRecycling24,
             iconSize = buttonHeight-64.dp
         )
@@ -138,7 +138,7 @@ fun HomeInfoButtons(
                 navController.navigate(InfoScreenDestinations.WASTE_TYPES.route)
             },
             buttonHeight = buttonHeight,
-            text = "Atkritumu veidi",
+            text = "About types of waste",
             largeSymbol = MyIcons.OutlineDelete24,
             iconSize = buttonHeight-64.dp
         )
@@ -147,7 +147,7 @@ fun HomeInfoButtons(
                 navController.navigate(InfoScreenDestinations.WASTE_COMPANIES.route)
             },
             buttonHeight = buttonHeight,
-            text = "Atkritumu apsaimniekotāji",
+            text = "Waste disposal companies",
             largeSymbol = MyIcons.OutlineFactory24,
             iconSize = buttonHeight-64.dp
         )
