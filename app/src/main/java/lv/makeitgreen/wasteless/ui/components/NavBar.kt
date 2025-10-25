@@ -5,7 +5,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffold
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
-import lv.makeitgreen.wasteless.AppDestinations
+import lv.makeitgreen.wasteless.navigation.AppDestinations
 
 @Composable
 fun NavBar(

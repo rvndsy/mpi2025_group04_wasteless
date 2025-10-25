@@ -21,7 +21,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
-import lv.makeitgreen.wasteless.AppDestinations
+import lv.makeitgreen.wasteless.navigation.AppDestinations
 import lv.makeitgreen.wasteless.ui.components.NavBar
 
 @OptIn(ExperimentalMaterial3Api::class)

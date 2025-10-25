@@ -1,11 +1,10 @@
-package lv.makeitgreen.wasteless
+package lv.makeitgreen.wasteless.navigation
 
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Home
 import androidx.compose.material.icons.rounded.Place
 import androidx.compose.material.icons.rounded.Search
-import androidx.compose.material.icons.rounded.Settings
+import androidx.compose.ui.graphics.vector.ImageVector
 
 enum class AppDestinations(
     val label: String,
