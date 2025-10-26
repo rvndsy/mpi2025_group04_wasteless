@@ -1,5 +1,8 @@
+@file:kotlin.OptIn(ExperimentalPermissionsApi::class)
+
 package lv.makeitgreen.wasteless.ui.main
 
+import android.Manifest
 import android.util.Log
 import androidx.annotation.OptIn
 import androidx.camera.core.CameraSelector
@@ -20,6 +23,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -33,6 +37,8 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.navigation.NavController
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
+import com.google.accompanist.permissions.rememberPermissionState
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
 import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.barcode.common.Barcode
@@ -49,6 +55,7 @@ fun ScanScreen(navController: NavController) {
     val lifecycleOwner = LocalLifecycleOwner.current
     var detectedBarcode by remember { mutableStateOf<String?>(null) }
     var isCameraPreviewActive by remember { mutableStateOf(false) }
+    val cameraPermissions = rememberPermissionState(Manifest.permission.CAMERA)
 
     // https://developer.android.com/media/camera/camerax/preview
     // https://developers.google.com/ml-kit/vision/barcode-scanning/android#kotlin
@@ -82,7 +89,12 @@ fun ScanScreen(navController: NavController) {
                 }
             }
         }
-    } else if (isCameraPreviewActive) {
+    } else {
+        // Ask for *precise* location permissions
+        LaunchedEffect(Unit) {
+            cameraPermissions.launchPermissionRequest()
+        }
+
         // Set up Camera Preview
         val cameraProvider = ProcessCameraProvider.getInstance(context).get()
         val previewView = remember { PreviewView(context) }
@@ -137,23 +149,19 @@ fun ScanScreen(navController: NavController) {
 
         // Lifecycle stuff
         DisposableEffect(isCameraPreviewActive) {
-            if (isCameraPreviewActive) {
-                cameraProvider.unbindAll()
-                cameraProvider.bindToLifecycle(
-                    lifecycleOwner,
-                    CameraSelector.DEFAULT_BACK_CAMERA,
-                    preview,
-                    analyzer
-                )
-            }
+            cameraProvider.unbindAll()
+            cameraProvider.bindToLifecycle(
+                lifecycleOwner,
+                CameraSelector.DEFAULT_BACK_CAMERA,
+                preview,
+                analyzer
+            )
 
             // Cleanup when exiting Camera preview
             onDispose {
-                if (isCameraPreviewActive) {
-                    analyzer.clearAnalyzer()
-                    cameraProvider.unbindAll()
-                    isCameraPreviewActive = false
-                }
+                analyzer.clearAnalyzer()
+                cameraProvider.unbindAll()
+                isCameraPreviewActive = false
             }
         }
 
