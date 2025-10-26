@@ -28,6 +28,7 @@ import com.google.accompanist.permissions.rememberPermissionState
 import com.google.android.gms.location.LocationServices
 import lv.makeitgreen.wasteless.navigation.AppDestinations
 import lv.makeitgreen.wasteless.ui.components.NavBar
+import org.osmdroid.config.Configuration
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
@@ -68,6 +69,9 @@ fun MapScreen(navController: NavController) {
             controller.setCenter(GeoPoint(latitude, longitude))
         }
     }
+
+    // the default "osmdroid" user agent value is banned, set it to something else
+    Configuration.getInstance().setUserAgentValue("github-makeitgreen-wasteless")
 
     // Create Overlay - the device current location displayed
     if (locationPermissions.status.isGranted) {
