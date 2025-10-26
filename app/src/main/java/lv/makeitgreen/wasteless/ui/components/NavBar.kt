@@ -31,6 +31,7 @@ fun NavBar(
                     label = { Text(it.label) },
                     selected = it == currentDestination,
                     onClick = {
+                        navController.popBackStack()
                         navController.navigate(it.route)
                     }
                 )
