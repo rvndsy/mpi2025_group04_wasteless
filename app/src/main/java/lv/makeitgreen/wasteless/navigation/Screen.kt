@@ -8,4 +8,5 @@ sealed class Screen(val route: String) {
     object RecyclingSymbolScreen : Screen("recycling_symbol_screen")
     object WasteCompanyScreen : Screen("waste_company_screen")
     object WasteTypesScreen : Screen("waste_types_screen")
+    object SettingsScreen : Screen("settings_screen")
 }

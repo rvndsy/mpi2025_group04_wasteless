@@ -19,5 +19,5 @@ enum class AppDestinations(
     MAP("Map", Icons.Rounded.Place, "map_screen"),
     SCANNER("Scanner", MyIcons.OutlineBarcodeScanner24, "scanner_screen"),
     SEARCH("Search", Icons.Rounded.Search, "search_screen"),
-    SETTINGS("Settings", Icons.Rounded.Settings, "settings_activity"),
+    SETTINGS("Settings", Icons.Rounded.Settings, "settings_screen"),
 }
