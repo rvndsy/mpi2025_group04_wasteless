@@ -61,6 +61,9 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
+    // Settings preference storage
+    implementation(libs.androidx.datastore.preferences)
+
     // For OSM MapView
     //noinspection NewerVersionAvailable
     implementation("com.google.accompanist:accompanist-permissions:0.37.3")
@@ -74,4 +77,6 @@ dependencies {
     implementation("androidx.camera:camera-view:1.5.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.4")
 //    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
+
+
 }
