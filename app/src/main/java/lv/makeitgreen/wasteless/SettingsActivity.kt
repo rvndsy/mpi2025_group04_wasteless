@@ -1,2 +1,0 @@
-package lv.makeitgreen.wasteless
-
