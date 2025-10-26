@@ -1,12 +1,5 @@
 package lv.makeitgreen.wasteless.navigation
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Home
-import androidx.compose.material.icons.rounded.Place
-import androidx.compose.material.icons.rounded.Search
-import androidx.compose.ui.graphics.vector.ImageVector
-import lv.makeitgreen.wasteless.ui.icons.MyIcons
-
 // Not part of Navigation Bar
 enum class InfoScreenDestinations (
     val label: String,

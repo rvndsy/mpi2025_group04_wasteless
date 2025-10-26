@@ -12,7 +12,6 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -57,6 +56,7 @@ fun ScanScreen(navController: NavController) {
     var isCameraPreviewActive by remember { mutableStateOf(false) }
     val cameraPermissions = rememberPermissionState(Manifest.permission.CAMERA)
 
+    // Useful resources
     // https://developer.android.com/media/camera/camerax/preview
     // https://developers.google.com/ml-kit/vision/barcode-scanning/android#kotlin
 
@@ -90,7 +90,7 @@ fun ScanScreen(navController: NavController) {
             }
         }
     } else {
-        // Ask for *precise* location permissions
+        // Ask for camera permissions
         LaunchedEffect(Unit) {
             cameraPermissions.launchPermissionRequest()
         }

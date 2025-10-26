@@ -12,8 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import lv.makeitgreen.wasteless.navigation.AppDestinations
 import lv.makeitgreen.wasteless.ui.components.NavBar
-import lv.makeitgreen.wasteless.ui.main.HomeInfoButtons
-import lv.makeitgreen.wasteless.ui.main.HomeSearchBar
 
 @Composable
 fun WasteCompanyScreen(navController: NavController) {
