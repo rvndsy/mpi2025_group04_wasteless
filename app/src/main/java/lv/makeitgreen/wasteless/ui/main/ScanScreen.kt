@@ -1,4 +1,4 @@
-@file:kotlin.OptIn(ExperimentalPermissionsApi::class)
+@file:kotlin.OptIn(ExperimentalPermissionsApi::class, ExperimentalMaterial3Api::class)
 
 package lv.makeitgreen.wasteless.ui.main
 
@@ -11,14 +11,22 @@ import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Close
+import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SearchBar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -56,6 +64,7 @@ fun ScanScreen(navController: NavController) {
     var isCameraPreviewActive by remember { mutableStateOf(false) }
     val cameraPermissions = rememberPermissionState(Manifest.permission.CAMERA)
 
+
     // Useful resources
     // https://developer.android.com/media/camera/camerax/preview
     // https://developers.google.com/ml-kit/vision/barcode-scanning/android#kotlin
@@ -66,6 +75,9 @@ fun ScanScreen(navController: NavController) {
             Scaffold(
                 modifier = Modifier.fillMaxSize()
             ) {
+                BarcodeProductSearchbar(
+                    searchBarModifier = Modifier.fillMaxWidth(0.95F)
+                )
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
@@ -182,5 +194,56 @@ fun DisplayBarcode(barcode: String?) {
         Text("No barcode found")
     } else {
         Text(barcode)
+    }
+}
+
+@Composable
+fun BarcodeProductSearchbar(
+    searchBarModifier: Modifier
+) {
+    var searchText by remember { mutableStateOf("") }
+    var isSearchActive by remember { mutableStateOf(false) }
+
+    Box(
+        Modifier.fillMaxSize(),
+        contentAlignment = Alignment.TopCenter
+    ) {
+        SearchBar(
+            query = searchText,
+            onQueryChange = {
+                searchText = it
+            },
+            onSearch = {
+                isSearchActive = false
+            },
+            active = isSearchActive,
+            onActiveChange = {
+                isSearchActive = it
+            },
+            placeholder = {
+                Text(
+                    text = "Search here",
+                )
+            },
+            leadingIcon = {
+                Icon(imageVector = Icons.Rounded.Search, contentDescription = "Search Icon")
+            },
+            trailingIcon = {
+                if (isSearchActive) {
+                    Icon(
+                        imageVector = Icons.Rounded.Close,
+                        contentDescription = "Close Icon",
+                        modifier = Modifier.clickable{
+                            if (searchText.isEmpty()) {
+                                isSearchActive = false
+                            } else {
+                                searchText = ""
+                            }
+                        },
+                    )
+                }
+            },
+            modifier = searchBarModifier
+        ) {}
     }
 }

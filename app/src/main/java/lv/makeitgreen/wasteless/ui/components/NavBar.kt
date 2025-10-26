@@ -31,8 +31,10 @@ fun NavBar(
                     label = { Text(it.label) },
                     selected = it == currentDestination,
                     onClick = {
-                        navController.popBackStack()
-                        navController.navigate(it.route)
+                        navController.navigate(it.route) {
+                            popUpTo(AppDestinations.HOME.route) { inclusive = false }
+                            launchSingleTop = true
+                        }
                     }
                 )
             }

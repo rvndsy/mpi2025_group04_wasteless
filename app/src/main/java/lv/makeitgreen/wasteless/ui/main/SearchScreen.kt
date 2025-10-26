@@ -32,7 +32,9 @@ fun SearchScreen(navController: NavController) {
     var isSearchActive by remember { mutableStateOf(false) }
 
     NavBar(currentDestination, navController) {
-        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+        Scaffold(
+            modifier = Modifier.fillMaxSize()
+        ) {
             Box(
                 Modifier.fillMaxSize(),
                 contentAlignment = Alignment.TopCenter
@@ -72,8 +74,7 @@ fun SearchScreen(navController: NavController) {
                             )
                         }
                     },
-                    modifier = Modifier
-                        .fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth(0.95F)
                 ) {}
             }
         }
