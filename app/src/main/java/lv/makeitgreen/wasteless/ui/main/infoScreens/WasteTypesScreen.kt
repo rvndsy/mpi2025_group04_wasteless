@@ -28,7 +28,7 @@ fun WasteTypesScreen(navController: NavController) {
     NavBar(currentDestination, navController) {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
             WasteTypesDescriptions(
-                modifier = Modifier.fillMaxWidth(0.95F).padding(innerPadding)
+                modifier = Modifier.padding(innerPadding)
             )
         }
     }
