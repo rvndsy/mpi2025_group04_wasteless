@@ -16,6 +16,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import lv.makeitgreen.wasteless.navigation.AppDestinations
@@ -42,17 +43,10 @@ data class WasteType(
 @Composable
 fun WasteTypesDescriptions(modifier: Modifier = Modifier) {
     val symbols = listOf(
-        WasteType("1 – PET / PETE", "Polyethylene Terephthalate"),
-//        WasteType("2 – HDPE", "High-Density Polyethylene"),
-//        WasteType("3 – PVC", "Polyvinyl Chloride"),
-//        WasteType("4 – LDPE", "Low-Density Polyethylene"),
-//        WasteType("5 – PP", "Polypropylene"),
-//        WasteType("6 – PS", "Polystyrene"),
-//        WasteType("7 – Other / O", "Bioplastics, Mixed"),
-//        WasteType("Al", "Aluminium"),
-//        WasteType("Fe / Steel", "Iron, Steel"),
-//        WasteType("GL", "Glass"),
-//        WasteType("PAP", "Paper, Cardboard")
+        WasteType("Biological (BIO)", "Food and garden waste including food waste in paper bags that can decompose naturally. Any type of liquid (oil, sauces, etc.) is not allowed."),
+        WasteType("Paper", "Paper, books, paper journals, newspapers, cardboard boxes, cardboard liquid containers. No paper towers, single-use paper dishes, plastic food packaging."),
+        WasteType("Plastics", "Allowed: PET, PP, HDPE, PS, LDPE.\nNot allowed: PS, PVC, OTHER, oil bottles, most food packaging, styrofoam, single use plastics."),
+        WasteType("Metals", "Clean metal food and drink containers, metal lids, pure metal everyday items. Sharp and mixed-material objects are NOT allowed."),
     )
 
     LazyColumn(
@@ -69,7 +63,8 @@ fun WasteTypesDescriptions(modifier: Modifier = Modifier) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Text(
                         text = item.type,
-                        style = MaterialTheme.typography.titleMedium
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold
                     )
                     Text(
                         text = item.description,
