@@ -1,0 +1,213 @@
+package lv.makeitgreen.wasteless.ui.icons.recycling
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+
+val RecyclingCodesPaper21PAP: ImageVector
+    get() {
+        if (_RecyclingCodesPaper21PAP != null) {
+            return _RecyclingCodesPaper21PAP!!
+        }
+        _RecyclingCodesPaper21PAP = ImageVector.Builder(
+            name = "RecyclingCodesPaper21PAP",
+            defaultWidth = 150.dp,
+            defaultHeight = 150.dp,
+            viewportWidth = 150f,
+            viewportHeight = 150f
+        ).apply {
+            path(fill = SolidColor(Color.Black)) {
+                moveTo(34f, 100.1f)
+                curveTo(30.9f, 100.1f, 28.5f, 98.95f, 27.35f, 96.95f)
+                curveTo(26.25f, 95f, 26.45f, 92.45f, 28.05f, 89.7f)
+                lineTo(40.8f, 67.6f)
+                lineTo(48.65f, 72.15f)
+                verticalLineTo(41.9f)
+                lineTo(22.4f, 57.05f)
+                lineTo(30.05f, 61.45f)
+                lineTo(17.3f, 83.55f)
+                curveTo(13.5f, 90.15f, 13.25f, 97.35f, 16.6f, 103.2f)
+                curveTo(20f, 109.05f, 26.5f, 112.55f, 34.05f, 112.55f)
+                horizontalLineTo(60f)
+                verticalLineTo(106.2f)
+                verticalLineTo(100.15f)
+                horizontalLineTo(34f)
+                verticalLineTo(100.1f)
+                close()
+            }
+            path(fill = SolidColor(Color.Black)) {
+                moveTo(68.7f, 19.3f)
+                curveTo(70.15f, 16.75f, 72.35f, 15.3f, 74.7f, 15.3f)
+                curveTo(77.05f, 15.3f, 79.2f, 16.75f, 80.7f, 19.3f)
+                lineTo(95.4f, 44.8f)
+                lineTo(87.7f, 49.25f)
+                lineTo(113.95f, 64.4f)
+                verticalLineTo(34.05f)
+                lineTo(106.15f, 38.55f)
+                lineTo(91.45f, 13.05f)
+                curveTo(87.75f, 6.65f, 81.5f, 2.85f, 74.7f, 2.85f)
+                curveTo(67.9f, 2.85f, 61.65f, 6.65f, 57.95f, 13.05f)
+                lineTo(43.3f, 38.45f)
+                lineTo(54.15f, 44.5f)
+                lineTo(68.7f, 19.3f)
+                close()
+            }
+            path(fill = SolidColor(Color.Black)) {
+                moveTo(132.1f, 83.55f)
+                lineTo(119.3f, 61.4f)
+                lineTo(108.55f, 67.6f)
+                lineTo(121.35f, 89.75f)
+                curveTo(122.9f, 92.45f, 123.15f, 95.05f, 122.05f, 97f)
+                curveTo(120.9f, 99f, 118.45f, 100.15f, 115.4f, 100.15f)
+                horizontalLineTo(86.3f)
+                verticalLineTo(91f)
+                lineTo(60f, 106.15f)
+                lineTo(86.25f, 121.3f)
+                verticalLineTo(112.5f)
+                horizontalLineTo(115.35f)
+                curveTo(122.9f, 112.5f, 129.4f, 109f, 132.75f, 103.15f)
+                curveTo(136.15f, 97.35f, 135.9f, 90.15f, 132.1f, 83.55f)
+                close()
+            }
+            path(fill = SolidColor(Color.Black)) {
+                moveTo(58.05f, 63.65f)
+                curveTo(58.4f, 62.45f, 59f, 61.4f, 59.75f, 60.5f)
+                curveTo(60.5f, 59.6f, 61.45f, 58.9f, 62.55f, 58.4f)
+                curveTo(63.7f, 57.9f, 65f, 57.65f, 66.45f, 57.65f)
+                curveTo(67.55f, 57.65f, 68.65f, 57.8f, 69.65f, 58.15f)
+                curveTo(70.65f, 58.5f, 71.55f, 59f, 72.3f, 59.65f)
+                curveTo(73.05f, 60.3f, 73.7f, 61.1f, 74.15f, 62.05f)
+                curveTo(74.6f, 63f, 74.85f, 64.05f, 74.85f, 65.25f)
+                curveTo(74.85f, 66.5f, 74.65f, 67.55f, 74.25f, 68.45f)
+                curveTo(73.85f, 69.35f, 73.35f, 70.1f, 72.7f, 70.8f)
+                curveTo(72.05f, 71.5f, 71.3f, 72.1f, 70.5f, 72.65f)
+                curveTo(69.65f, 73.2f, 68.85f, 73.75f, 68f, 74.3f)
+                curveTo(67.15f, 74.85f, 66.35f, 75.45f, 65.55f, 76.05f)
+                curveTo(64.75f, 76.7f, 64.05f, 77.4f, 63.45f, 78.25f)
+                horizontalLineTo(75f)
+                verticalLineTo(82.5f)
+                horizontalLineTo(57f)
+                curveTo(57f, 81.1f, 57.2f, 79.85f, 57.6f, 78.8f)
+                curveTo(58f, 77.75f, 58.55f, 76.8f, 59.25f, 76f)
+                curveTo(59.95f, 75.2f, 60.75f, 74.4f, 61.7f, 73.7f)
+                curveTo(62.65f, 73f, 63.65f, 72.3f, 64.7f, 71.55f)
+                curveTo(65.25f, 71.2f, 65.8f, 70.8f, 66.4f, 70.4f)
+                curveTo(67f, 70f, 67.55f, 69.6f, 68.05f, 69.15f)
+                curveTo(68.55f, 68.7f, 68.95f, 68.15f, 69.3f, 67.6f)
+                curveTo(69.65f, 67f, 69.8f, 66.35f, 69.8f, 65.6f)
+                curveTo(69.8f, 64.4f, 69.45f, 63.5f, 68.75f, 62.8f)
+                curveTo(68.05f, 62.15f, 67.2f, 61.8f, 66.1f, 61.8f)
+                curveTo(65.4f, 61.8f, 64.75f, 61.95f, 64.25f, 62.3f)
+                curveTo(63.75f, 62.65f, 63.35f, 63.1f, 63.05f, 63.65f)
+                curveTo(62.75f, 64.2f, 62.55f, 64.8f, 62.4f, 65.45f)
+                curveTo(62.25f, 66.1f, 62.2f, 66.75f, 62.2f, 67.4f)
+                horizontalLineTo(57.45f)
+                curveTo(57.55f, 66.15f, 57.7f, 64.85f, 58.05f, 63.65f)
+                close()
+            }
+            path(fill = SolidColor(Color.Black)) {
+                moveTo(84.4f, 82.55f)
+                verticalLineTo(66.7f)
+                horizontalLineTo(78.25f)
+                verticalLineTo(63f)
+                curveTo(79.1f, 63f, 79.95f, 62.95f, 80.75f, 62.8f)
+                curveTo(81.55f, 62.65f, 82.3f, 62.4f, 82.9f, 62f)
+                curveTo(83.55f, 61.6f, 84.1f, 61.1f, 84.5f, 60.5f)
+                curveTo(84.95f, 59.85f, 85.25f, 59.1f, 85.35f, 58.15f)
+                horizontalLineTo(89.3f)
+                verticalLineTo(82.6f)
+                horizontalLineTo(84.4f)
+                verticalLineTo(82.55f)
+                close()
+            }
+            path(fill = SolidColor(Color.Black)) {
+                moveTo(53.6f, 123.25f)
+                curveTo(55.15f, 123.25f, 56.5f, 123.5f, 57.6f, 123.95f)
+                curveTo(58.7f, 124.4f, 59.6f, 125f, 60.25f, 125.75f)
+                curveTo(60.9f, 126.5f, 61.45f, 127.35f, 61.75f, 128.3f)
+                curveTo(62.05f, 129.25f, 62.2f, 130.25f, 62.2f, 131.25f)
+                curveTo(62.2f, 132.25f, 62.05f, 133.25f, 61.75f, 134.2f)
+                curveTo(61.45f, 135.15f, 60.95f, 136f, 60.25f, 136.75f)
+                curveTo(59.55f, 137.5f, 58.65f, 138.1f, 57.6f, 138.55f)
+                curveTo(56.5f, 139f, 55.2f, 139.25f, 53.6f, 139.25f)
+                horizontalLineTo(47.85f)
+                verticalLineTo(148.2f)
+                horizontalLineTo(42.35f)
+                verticalLineTo(123.3f)
+                horizontalLineTo(53.6f)
+                verticalLineTo(123.25f)
+                close()
+                moveTo(52.1f, 134.95f)
+                curveTo(52.75f, 134.95f, 53.35f, 134.9f, 53.9f, 134.8f)
+                curveTo(54.45f, 134.7f, 55f, 134.55f, 55.45f, 134.25f)
+                curveTo(55.9f, 134f, 56.25f, 133.6f, 56.5f, 133.1f)
+                curveTo(56.75f, 132.6f, 56.9f, 131.95f, 56.9f, 131.2f)
+                curveTo(56.9f, 130.4f, 56.75f, 129.75f, 56.5f, 129.3f)
+                curveTo(56.25f, 128.8f, 55.9f, 128.45f, 55.45f, 128.15f)
+                curveTo(55f, 127.9f, 54.5f, 127.7f, 53.9f, 127.6f)
+                curveTo(53.3f, 127.5f, 52.7f, 127.45f, 52.1f, 127.45f)
+                horizontalLineTo(47.85f)
+                verticalLineTo(134.9f)
+                horizontalLineTo(52.1f)
+                verticalLineTo(134.95f)
+                close()
+            }
+            path(fill = SolidColor(Color.Black)) {
+                moveTo(77.6f, 123.25f)
+                lineTo(86.9f, 148.15f)
+                horizontalLineTo(81.2f)
+                lineTo(79.3f, 142.6f)
+                horizontalLineTo(70f)
+                lineTo(68.05f, 148.15f)
+                horizontalLineTo(62.55f)
+                lineTo(71.95f, 123.25f)
+                horizontalLineTo(77.6f)
+                close()
+                moveTo(77.9f, 138.5f)
+                lineTo(74.75f, 129.35f)
+                horizontalLineTo(74.7f)
+                lineTo(71.45f, 138.5f)
+                horizontalLineTo(77.9f)
+                close()
+            }
+            path(fill = SolidColor(Color.Black)) {
+                moveTo(102.4f, 123.25f)
+                curveTo(103.95f, 123.25f, 105.3f, 123.5f, 106.4f, 123.95f)
+                curveTo(107.5f, 124.4f, 108.4f, 125f, 109.05f, 125.75f)
+                curveTo(109.7f, 126.5f, 110.25f, 127.35f, 110.55f, 128.3f)
+                curveTo(110.85f, 129.25f, 111f, 130.25f, 111f, 131.25f)
+                curveTo(111f, 132.25f, 110.85f, 133.25f, 110.55f, 134.2f)
+                curveTo(110.25f, 135.15f, 109.75f, 136f, 109.05f, 136.75f)
+                curveTo(108.35f, 137.5f, 107.45f, 138.1f, 106.4f, 138.55f)
+                curveTo(105.3f, 139f, 104f, 139.25f, 102.4f, 139.25f)
+                horizontalLineTo(96.65f)
+                verticalLineTo(148.2f)
+                horizontalLineTo(91.15f)
+                verticalLineTo(123.3f)
+                horizontalLineTo(102.4f)
+                verticalLineTo(123.25f)
+                close()
+                moveTo(100.9f, 134.95f)
+                curveTo(101.55f, 134.95f, 102.15f, 134.9f, 102.7f, 134.8f)
+                curveTo(103.3f, 134.7f, 103.8f, 134.55f, 104.25f, 134.25f)
+                curveTo(104.7f, 134f, 105.05f, 133.6f, 105.3f, 133.1f)
+                curveTo(105.55f, 132.6f, 105.7f, 131.95f, 105.7f, 131.2f)
+                curveTo(105.7f, 130.4f, 105.55f, 129.75f, 105.3f, 129.3f)
+                curveTo(105.05f, 128.8f, 104.7f, 128.45f, 104.25f, 128.15f)
+                curveTo(103.8f, 127.9f, 103.3f, 127.7f, 102.7f, 127.6f)
+                curveTo(102.1f, 127.5f, 101.5f, 127.45f, 100.9f, 127.45f)
+                horizontalLineTo(96.65f)
+                verticalLineTo(134.9f)
+                horizontalLineTo(100.9f)
+                verticalLineTo(134.95f)
+                close()
+            }
+        }.build()
+
+        return _RecyclingCodesPaper21PAP!!
+    }
+
+@Suppress("ObjectPropertyName")
+private var _RecyclingCodesPaper21PAP: ImageVector? = null
